@@ -24,6 +24,7 @@ body {
 }
 
 /* Full-page photo */
+/* Full-page photo - responsive without cropping */
 .photo,
 body > .photo {
   display: block;
@@ -34,15 +35,16 @@ body > .photo {
   border-radius: 0;
   box-shadow: none;
   background: none;
+  overflow: hidden;
 }
 
 .photo-img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: none;
   aspect-ratio: auto;
-  object-fit: cover;
-  max-height: 560px;          /* keeps the photo from taking over big screens */
+  object-fit: contain;
 }
 
 /* ---------- Header ---------- */
@@ -304,9 +306,7 @@ body > .photo {
 /* ---------- Responsive ---------- */
 
 /* Tablet portrait & up */
-@media (min-width: 768px) {
-  .photo-img { max-height: 440px; }
-}
+
 
 /* Laptop / desktop */
 @media (min-width: 992px) {
@@ -317,9 +317,7 @@ body > .photo {
 }
 
 /* Large desktop */
-@media (min-width: 1400px) {
-  .photo-img { max-height: 520px; }
-}
+
 
 /* Phones */
 @media (max-width: 575.98px) {
