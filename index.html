@@ -13,7 +13,6 @@
 </head>
 <body>
 
-
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
@@ -31,9 +30,11 @@
       </button>
     </div>
   </header>
+
   <figure class="photo">
-      <img src="./images/hero-bg.png" alt="Event photo" class="photo-img" loading="lazy">
-    </figure>
+    <img src="./images/hero-bg.png" alt="Event photo" class="photo-img" loading="lazy">
+  </figure>
+
   <!-- Main -->
   <main class="page">
     <div class="container">
@@ -43,10 +44,37 @@
           <section class="event-card">
             <h1 class="event-title" id="eventTitle">50 years</h1>
 
+            <!-- Date / Time / Location (filled from the CONFIG in script.js) -->
             <ul class="event-meta list-unstyled">
-              <li><i class="bi bi-calendar3"></i><span id="eventDate">Tuesday, October 27, 2026 at 12:00 PM</span></li>
-              <li><i class="bi bi-geo-alt"></i><span id="eventPlace">trump hotel</span></li>
+              <li><i class="bi bi-calendar3"></i><span id="eventDate"></span></li>
+              <li><i class="bi bi-clock"></i><span id="eventTime"></span></li>
+              <li>
+                <a class="meta-link" id="eventPlaceLink" href="#" target="_blank" rel="noopener">
+                  <i class="bi bi-geo-alt"></i><span id="eventPlace">trump hotel</span>
+                </a>
+              </li>
             </ul>
+
+            <!-- Countdown -->
+            <div class="countdown" id="countdown" role="timer" aria-label="Countdown">
+              <p class="countdown-title" data-i18n="startsIn">Event starts in</p>
+              <div class="countdown-grid" id="countdownGrid">
+                <div class="cd-box"><span class="cd-num" id="cdDays">00</span><span class="cd-label" data-i18n="days">Days</span></div>
+                <div class="cd-box"><span class="cd-num" id="cdHours">00</span><span class="cd-label" data-i18n="hours">Hours</span></div>
+                <div class="cd-box"><span class="cd-num" id="cdMinutes">00</span><span class="cd-label" data-i18n="minutes">Minutes</span></div>
+                <div class="cd-box"><span class="cd-num" id="cdSeconds">00</span><span class="cd-label" data-i18n="seconds">Seconds</span></div>
+              </div>
+              <p class="countdown-done d-none" id="cdDone" data-i18n="started">The event has started.</p>
+            </div>
+
+            <!-- Map: click anywhere on it to open Google Maps -->
+            <div class="map-wrap">
+              <iframe id="mapFrame" class="map-frame" title="Event location map" loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              <a class="map-overlay" id="mapOverlay" href="#" target="_blank" rel="noopener" aria-label="Open in Google Maps">
+                <span class="map-pill"><i class="bi bi-box-arrow-up-right"></i><span data-i18n="openMap">Open in Google Maps</span></span>
+              </a>
+            </div>
 
             <form id="registerForm" novalidate>
               <div class="field">
