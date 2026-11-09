@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>50 years – Register | Dopave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="brand" aria-label="Dopave">
+        <svg class="brand-icon" width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+          <path d="M6 7h22a2 2 0 0 1 2 2v3.2a3 3 0 0 0 0 5.6V21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3.2a3 3 0 0 0 0-5.6V9a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round"/>
+          <path d="M12 12.5v6M17 12.5v6M22 12.5v6" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Dopave</span>
+      </a>
+
+      <button type="button" class="lang-btn" id="langBtn" aria-label="Change language">
+        <i class="bi bi-translate"></i>
+        <span id="langLabel">العربية</span>
+      </button>
+    </div>
+  </header>
+  <figure class="photo">
+      <img src="./images/hero-bg.png" alt="Event photo" class="photo-img" loading="lazy">
+    </figure>
+  <!-- Main -->
+  <main class="page">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+
+          <section class="event-card">
+            <h1 class="event-title" id="eventTitle">50 years</h1>
+
+            <ul class="event-meta list-unstyled">
+              <li><i class="bi bi-calendar3"></i><span id="eventDate">Tuesday, October 27, 2026 at 12:00 PM</span></li>
+              <li><i class="bi bi-geo-alt"></i><span id="eventPlace">trump hotel</span></li>
+            </ul>
+
+            <form id="registerForm" novalidate>
+              <div class="field">
+                <label for="fullName" class="form-label" data-i18n="name">Full name</label>
+                <input type="text" class="form-control" id="fullName" name="fullName" autocomplete="name" required>
+                <div class="invalid-feedback" data-i18n="errName">Please enter your full name.</div>
+              </div>
+
+              <div class="field">
+                <label for="email" class="form-label" data-i18n="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" autocomplete="email" required>
+                <div class="invalid-feedback" data-i18n="errEmail">Please enter a valid email.</div>
+              </div>
+
+              <div class="field">
+                <label for="phone" class="form-label" data-i18n="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" autocomplete="tel" required>
+                <div class="invalid-feedback" data-i18n="errPhone">Please enter your phone number.</div>
+              </div>
+
+              <div class="field">
+                <label for="company" class="form-label" data-i18n="company">Company (optional)</label>
+                <input type="text" class="form-control" id="company" name="company" autocomplete="organization">
+              </div>
+
+              <!-- Spam trap: must stay hidden and empty -->
+              <input type="text" name="_honey" class="d-none" tabindex="-1" autocomplete="off">
+
+              <div id="formAlert" class="alert d-none" role="alert"></div>
+
+              <button type="submit" class="btn btn-register" id="submitBtn">
+                <span class="spinner-border spinner-border-sm d-none" id="spinner" aria-hidden="true"></span>
+                <span id="submitLabel" data-i18n="register">Register</span>
+              </button>
+            </form>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
